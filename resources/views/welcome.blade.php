@@ -68,7 +68,25 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+                                997 ten numer to kłopoty
+Gdy wydarzy się incydent to pojawia się konfident
+Dzwoni 997 i wszystkich sprzedaje
+Przyjeżdżają kurwy, menty, jebane suki
+Śmiecie, psy, pierdolone kupy gówna
+Wygarnąć do nich z gana, to moje marzenie
+Pierdole konsekwencje, areszty i więzienie
+Jak siedzieć to kurwa za coś konkretnego
+Sprzątnęłeś psa, nie pierdolisz się kolego
+Lądujesz w areszcie, masz ich wszystkich w dupie
+Pierdolimy policję i trzymamy się w kupie
+To jest nasza siła, potęga, moc i chwała
+Każdy ze Slums Attack nienawiścią do nich pała
+Kurwa w mundurze to nasz największy wróg
+Nienawidzę ich jak mogę i pluję im w mordę
+Ściągają cię z ulicy, oskarżają o zbrodnie
+Popychają cię pod ścianę, obszukują kurtkę, spodnie
+Słuchasz ich uważnie, wysłuchujesz te plugastwa
+Każdy taki pies to jebany pederasta
                                 </div>
                             </div>
                         </div>
