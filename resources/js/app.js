@@ -15,14 +15,8 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import SideMenu from './components/SideMenu.vue';
-import AdminMenuList from './components/Menus/AdminMenuList.vue';
-import TeacherMenuList from './components/Menus/TeacherMenuList.vue';
-import StudentMenuList from './components/Menus/StudentMenuList.vue';
-app.component('side-menu', SideMenu);
-app.component('admin-menu-list', AdminMenuList);
-app.component('teacher-menu-list', TeacherMenuList);
-app.component('student-menu-list', StudentMenuList);
+// import SideMenu from './components/SideMenu.vue';
+// app.component('side-menu', SideMenu);
 
 /**
  * The following block of code may be used to automatically register your
