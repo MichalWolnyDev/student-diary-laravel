@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostsController;
 
 
 /*
@@ -24,3 +25,10 @@ Route::get('/', [HomeController::class, 'index']);
 // Route::get('/login', [UserLogin::class, 'index']);
 Auth::routes();
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Post endpoint
+//Route::get('/index',[PostControler::class, 'index']);
