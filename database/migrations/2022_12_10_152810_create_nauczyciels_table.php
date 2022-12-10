@@ -17,7 +17,8 @@ return new class extends Migration
             $table->increments('id');
             $table->string('Imie');
             $table->string('Nazwisko');
-            $table->integer('Przedmiot');
+            $table->unsignedInteger('id_Przedmiot');
+            $table->foreign('id_Przedmiot')->references('id')->on('przedmiot');
             $table->string('Login');
             $table->string('Haslo');
             $table->timestamps();

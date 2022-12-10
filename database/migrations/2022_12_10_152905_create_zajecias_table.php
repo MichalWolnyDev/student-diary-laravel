@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('Zajecia', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Nazwa');
-            $table->integer('Nauczyciel');
-            $table->integer('Klasa');
+            $table->unsignedInteger('id_Nauczyciel');
+            $table->foreign('id_Nauczyciel')->references('id')->on('nauczyciel');
+            $table->unsignedInteger('id_Klasa');
+            $table->foreign('id_Klasa')->references('id')->on('klasa');
             $table->timestamps();
         });
     }

@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('Oceny', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('Uczen');
-            $table->integer('Nauczyciel');
-            $table->integer('Klasa');
+            $table->unsignedInteger('id_Uczen');
+            $table->foreign('id_Uczen')->references('id')->on('uczen');
+            $table->unsignedInteger('id_Zajecia');
+            $table->foreign('id_Zajecia')->references('id')->on('zajecia');
             $table->integer('Ocena');
             $table->timestamps();
         });

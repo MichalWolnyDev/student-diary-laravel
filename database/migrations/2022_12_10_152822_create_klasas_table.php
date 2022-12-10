@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('Klasa', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Nazwa')->unique();
-            $table->integer('Uczen');
             $table->timestamps();
         });
     }
