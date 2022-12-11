@@ -32,3 +32,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //Post endpoint
 //Route::get('/index',[PostControler::class, 'index']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
