@@ -48,6 +48,9 @@
                             @can('user-create')
                             <li><a class="nav-link" href="{{ route('users.index') }}">Użytkownicy</a></li>
                             @endcan
+                            @can('subject-create')
+                            <li><a class="nav-link" href="{{ route('subjects.index') }}">Przedmioty</a></li>
+                            @endcan
                             @can('role-create')
                             <li><a class="nav-link" href="{{ route('roles.index') }}">Uprawnienia</a></li>
                             @endcan

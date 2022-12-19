@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class GradeController extends Controller
 { 
     /**
-     * Display a listing of the resource.
+     * Access only when you have permission listed in _construct
      *
      * @return \Illuminate\Http\Response
      */
@@ -26,9 +26,9 @@ class GradeController extends Controller
      */
     public function index()
     {
-        $grades = Grades::latest()->paginate(5);
+        $grades = Grades::latest()->paginate(10);
         return view('grades.index',compact('grades'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
     
     /**
