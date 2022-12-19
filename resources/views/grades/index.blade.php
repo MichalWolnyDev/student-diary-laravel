@@ -20,15 +20,17 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Name</th>
-            <th>Details</th>
+            <th>Subject</th>
+            <th>Grade</th>
+            <th>Description</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($grades as $grade)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $grade->name }}</td>
-            <td>{{ $grade->detail }}</td>
+            <td>{{ $grade->subject }}</td>
+            <td>{{ $grade->grade }}</td>
+            <td>{{ $grade->description }}</td>
             <td>
                 <form action="{{ route('grades.destroy',$grade->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('grades.show',$grade->id) }}">Show</a>

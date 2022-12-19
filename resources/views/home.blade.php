@@ -6,6 +6,7 @@
 
 @include('layouts.admin')
 
+
 @include('layouts.teacher')
 
 

@@ -13,14 +13,20 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
-                {{ $grade->name }}
+                <strong>Subject:</strong>
+                {{ $grade->subject }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Details:</strong>
-                {{ $grade->detail }}
+                <strong>Grade:</strong>
+                {{ $grade->grade }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Description:</strong>
+                {{ $grade->description }}
             </div>
         </div>
     </div>

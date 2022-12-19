@@ -25,7 +25,11 @@ class PermissionTableSeeder extends Seeder
             'grade-list',
             'grade-create',
             'grade-edit',
-            'grade-delete'
+            'grade-delete',
+            'user-list',
+            'user-create',
+            'user-edit',
+            'user-delete',
         ];
        
         foreach ($permissions as $permission) {
