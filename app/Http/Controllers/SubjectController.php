@@ -59,7 +59,7 @@ class SubjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Grades  $grades
+     * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
     public function show(Subject $subject)
@@ -71,7 +71,7 @@ class SubjectController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Grades  $grade
+     * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
     public function destroy(Subject $subject)

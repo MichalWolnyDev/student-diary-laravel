@@ -51,6 +51,9 @@
                             @can('subject-create')
                             <li><a class="nav-link" href="{{ route('subjects.index') }}">Przedmioty</a></li>
                             @endcan
+                            @can('schoolclass-create')
+                            <li><a class="nav-link" href="{{ route('classes.index') }}">Klasy</a></li>
+                            @endcan
                             @can('role-create')
                             <li><a class="nav-link" href="{{ route('roles.index') }}">Uprawnienia</a></li>
                             @endcan
