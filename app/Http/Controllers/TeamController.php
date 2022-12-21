@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SchoolClass;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
-class SchoolClassController extends Controller
+class TeamController extends Controller
 {
     function __construct()
     {
@@ -15,7 +15,6 @@ class SchoolClassController extends Controller
         $this->middleware('permission:schoolclass-delete', ['only' => ['destroy']]);
     }
 
-
     /**
      * Display a listing of the resource.
      *
@@ -23,11 +22,12 @@ class SchoolClassController extends Controller
      */
     public function index()
     {
-        $sclasses = SchoolClass::latest()->paginate(10);
-        return view('classesview.index', compact('sclasses'))
-            ->with('i', (request()->input('page', 1) - 1) * 10);
+        $teams = Team::latest()->paginate(10);
 
+        return view('teams.index', compact('teams'))
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -36,8 +36,10 @@ class SchoolClassController extends Controller
      */
     public function create()
     {
-        return view('classesview.create');
+        return view('teams.create');
+
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -48,39 +50,38 @@ class SchoolClassController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'classname' => 'required',
+            'teamname' => 'required',
         ]);
 
-        SchoolClass::create($request->all());
+        Team::create($request->all());
 
-        return redirect()->route('classes.index')
+        return redirect()->route('teams.index')
             ->with('success', 'Class created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\SchoolClass $schoolclass
+     * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function show(SchoolClass $schoolclass)
+    public function show(Team $team)
     {
-        return view('classesview.show', compact('schoolclass'));
+
+        return view('teams.show', compact('team'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SchoolClass $sclasses
+     * @param  \App\Team $team
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SchoolClass $sclasses)
+    public function destroy(Team $team)
     {
-        $sclasses->delete();
+        $team->delete();
 
-        return redirect()->route('classess.index')
+        return redirect()->route('teams.index')
             ->with('success', 'Class deleted successfully');
     }
-
-
 }
