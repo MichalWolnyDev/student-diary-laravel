@@ -6,7 +6,7 @@
                 <h2>Szczegóły</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('classes.index') }}"> Wróć</a>
+                <a class="btn btn-primary" href="{{ route('teams.index') }}"> Wróć</a>
             </div>
         </div>
     </div>
@@ -14,7 +14,8 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Klasa:</strong>
-                {{ $schoolclass->classname }}
+                {{ $team }}
+                {{ $team->classname }}
             </div>
         </div>
        

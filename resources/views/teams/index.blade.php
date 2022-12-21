@@ -7,7 +7,7 @@
             </div>
             <div class="pull-right">
                 @can('schoolclass-create')
-                <a class="btn btn-success" href="{{ route('classes.create') }}"> Create New subject</a>
+                <a class="btn btn-success" href="{{ route('teams.create') }}"> Create New subject</a>
                 @endcan
             </div>
         </div>
@@ -23,13 +23,14 @@
             <th>Klasa</th>
             <th width="280px"></th>
         </tr>
-        @foreach ($sclasses as $sclass)
+        @foreach ($teams as $team)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $sclass->classname }}</td>
+            <td>{{ $team->teamname }}</td>
+            <td>{{ $team->id}}</td>
             <td>
-                <form action="{{ route('classes.destroy',$sclass->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('classes.show',$sclass->id) }}">Show</a>
+                <form action="{{ route('teams.destroy',$team->id) }}" method="POST">
+                    <a class="btn btn-info" href="{{ route('teams.show',$team->id) }}">Show</a>
                     @csrf
                     @method('DELETE')
                     @can('schoolclass-delete')
@@ -40,5 +41,5 @@
         </tr>
         @endforeach
     </table>
-    {!! $sclasses->links() !!}
+    {!! $teams->links() !!}
 @endsection

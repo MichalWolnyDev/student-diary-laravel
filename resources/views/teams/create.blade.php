@@ -6,7 +6,7 @@
                 <h2>Dodaj klasę</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('classes.index') }}"> Wróć</a>
+                <a class="btn btn-primary" href="{{ route('teams.index') }}"> Wróć</a>
             </div>
         </div>
     </div>
@@ -20,13 +20,13 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('classes.store') }}" method="POST">
+    <form action="{{ route('teams.store') }}" method="POST">
         @csrf
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Klasa:</strong>
-                    <input type="text" name="classname" class="form-control" placeholder="Klasa">
+                    <input type="text" name="teamname" class="form-control" placeholder="Klasa">
                 </div>
             </div>
             
