@@ -3,11 +3,11 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Subjects</h2>
+                <h2>Przedmiot</h2>
             </div>
             <div class="pull-right">
                 @can('subject-create')
-                <a class="btn btn-success" href="{{ route('subjects.create') }}"> Create New subject</a>
+                <a class="btn btn-success" href="{{ route('subjects.create') }}"> Utwórz nowy przedmiot</a>
                 @endcan
             </div>
         </div>
@@ -20,8 +20,8 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Subject</th>
-            <th width="280px">Action</th>
+            <th>Przedmiot</th>
+            <th width="280px">Akcja</th>
         </tr>
         @foreach ($subjects as $subject)
         <tr>
@@ -29,11 +29,11 @@
             <td>{{ $subject->subject }}</td>
             <td>
                 <form action="{{ route('subjects.destroy',$subject->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('subjects.show',$subject->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('subjects.show',$subject->id) }}">Pokaż</a>
                     @csrf
                     @method('DELETE')
                     @can('subject-delete')
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">Usuń</button>
                     @endcan
                 </form>
             </td>

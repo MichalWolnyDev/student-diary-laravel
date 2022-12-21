@@ -3,11 +3,11 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>grades</h2>
+                <h2>Oceny</h2>
             </div>
             <div class="pull-right">
                 @can('grade-create')
-                <a class="btn btn-success" href="{{ route('grades.create') }}"> Create New grade</a>
+                <a class="btn btn-success" href="{{ route('grades.create') }}"> Utwórz nową ocenę</a>
                 @endcan
             </div>
         </div>
@@ -20,10 +20,10 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Subject</th>
-            <th>Grade</th>
-            <th>Description</th>
-            <th width="280px">Action</th>
+            <th>Przedmiot</th>
+            <th>Ocena</th>
+            <th>Opis</th>
+            <th width="280px">Akcja</th>
         </tr>
         @foreach ($grades as $grade)
         <tr>
@@ -33,14 +33,14 @@
             <td>{{ $grade->description }}</td>
             <td>
                 <form action="{{ route('grades.destroy',$grade->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('grades.show',$grade->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('grades.show',$grade->id) }}">Pokaż</a>
                     @can('grade-edit')
-                    <a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}">Edytuj</a>
                     @endcan
                     @csrf
                     @method('DELETE')
                     @can('grade-delete')
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">Usuń</button>
                     @endcan
                 </form>
             </td>

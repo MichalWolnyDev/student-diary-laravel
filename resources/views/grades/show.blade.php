@@ -3,29 +3,39 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show grade</h2>
+                <h2> Pokaż ocenę</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('grades.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('grades.index') }}"> Powrót</a>
             </div>
         </div>
     </div>
     <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Uczeń:</strong>
+                Jan Nowak
+            </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Subject:</strong>
+                <strong>Klasa:</strong>
+                A1
+            </div>   
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Przedmiot:</strong>
                 {{ $grade->subject }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Grade:</strong>
+                <strong>Ocena:</strong>
                 {{ $grade->grade }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Description:</strong>
+                <strong>Opis:</strong>
                 {{ $grade->description }}
             </div>
         </div>

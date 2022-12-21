@@ -3,16 +3,16 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Add New Subject</h2>
+                <h2>Dodaj nowy przedmiot</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('subjects.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('subjects.index') }}"> Powrót</a>
             </div>
         </div>
     </div>
     @if ($errors->any())
         <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <strong>Uwaga!</strong> Sprawdź poprawność uzupełnianych danych!<br><br>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -25,13 +25,13 @@
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Subject:</strong>
-                    <input type="text" name="subject" class="form-control" placeholder="Subject">
+                    <strong>Przedmiot:</strong>
+                    <input type="text" name="subject" class="form-control" placeholder="Przedmiot">
                 </div>
             </div>
             
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Dodaj</button>
             </div>
         </div>
     </form>
