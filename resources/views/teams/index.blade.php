@@ -27,7 +27,6 @@
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $team->teamname }}</td>
-            <td>{{ $team->id}}</td>
             <td>
                 <form action="{{ route('teams.destroy',$team->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('teams.show',$team->id) }}">Show</a>

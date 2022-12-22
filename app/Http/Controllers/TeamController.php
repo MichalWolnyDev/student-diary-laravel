@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Team;
 use Illuminate\Http\Request;
+use DB;
 
 class TeamController extends Controller
 {
@@ -67,8 +68,22 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
+        // SELECT * FROM `team_has_students` INNER JOIN `students` ON `team_has_students`.`student_id`=`students`.`id` WHERE `team_id`= 1;
 
-        return view('teams.show', compact('team'));
+
+        $students = DB::table('students')
+            ->join('team_has_students', 'team_has_students.student_id', '=', 'students.id')
+            ->select('students.*')
+            ->where('team_id', $team->id)
+            ->get();
+
+        //      echo "<pre>";
+        // var_dump($students);
+        // echo "</pre>";
+
+
+        return view('teams.show')->with(compact('students'))->with(compact('team'));
+
     }
 
     /**

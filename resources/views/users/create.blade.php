@@ -24,8 +24,14 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Imię i nazwisko:</strong>
-            {!! Form::text('name', null, array('placeholder' => 'Imię i nazwisko','class' => 'form-control')) !!}
+            <strong>Imię:</strong>
+            {!! Form::text('name', null, array('placeholder' => 'Imię','class' => 'form-control')) !!}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Nazwisko:</strong>
+            {!! Form::text('surname', null, array('placeholder' => 'Nazwisko','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -44,6 +50,13 @@
         <div class="form-group">
             <strong>Potwierdź hasło:</strong>
             {!! Form::password('confirm-password', array('placeholder' => 'Potwierdź hasło','class' => 'form-control')) !!}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Czy jest to uczeń?:</strong>
+            <br>
+            {!! Form::checkbox('isStudent', 'yes', false, array('class' => 'form-check-input')) !!} TAK
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
