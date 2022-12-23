@@ -7,7 +7,7 @@
             </div>
             <div class="pull-right">
                 @can('schoolclass-create')
-                <a class="btn btn-success" href="{{ route('teams.create') }}"> Create New subject</a>
+                <a class="btn btn-success" href="{{ route('teams.create') }}"> Dodaj nową klasę</a>
                 @endcan
             </div>
         </div>

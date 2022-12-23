@@ -29,24 +29,31 @@ class StudentController extends Controller
 
     public function edit($id)
     {
-        // $role = Role::find($id);
         $teams = Team::get();
-
-
         return view('students.team',compact('id','teams'));
     }
+
     public function store(Request $request)
     {
 
         $input = $request->all();
-        echo "<pre>";
-        var_dump($input);
-        echo "</pre>";
+        // echo "<pre>";
+        // var_dump($input);
+        // echo "</pre>";
 
         Team_has_student::create([
             'team_id' => $request->input('team'),
             'student_id' => $request->input('student_id'),
         ]);
+
+
+        //update team_id in students table
+        $student = Student::find($request->input('student_id'));
+        $teamname = Team::find($request->input('team'))->teamname;
+        $student->update(array(
+            'team_id' => $request->input('team'),
+            'team_name' => $teamname,
+        ));
 
 
         return redirect()->route('students.index')

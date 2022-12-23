@@ -14,15 +14,20 @@
         <th>Nr</th>
         <th>Imię</th>
         <th>Nazwisko</th>
+        <th>Klasa</th>
         <th width="280px"></th>
     </tr>
 @foreach ($data as $key => $student)
+{{$student}}
     <tr>
         <td>{{ ++$i }}</td>
         <td>{{ $student->name }}</td>
         <td>{{ $student->surname }}</td>
-        <td>{{ $student->email }}</td>
-       
+        @if($student->team_id > 0)
+        <td>{{ $student->team_name }}</td>
+        @else
+        <td>Nie przypisano do żadnej klasy</td>
+        @endif
         <td>
             <a class="btn btn-info" href="{{ route('students.edit', $student->id) }}">Przypisz do klasy</a>
             <!-- <a class="btn btn-primary" href="{{ route('students.edit',$student->id) }}">Edycja</a>

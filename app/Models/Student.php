@@ -11,7 +11,19 @@ class Student extends Model
 
     protected $fillable = [
         'user_id',
+        'team_id',
+        'team_name',
         'name',
         'surname',
+    ];
+
+      /**
+     * The model's default values for attributes.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'team_id' => null,
+        'team_name' => null,
     ];
 }

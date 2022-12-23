@@ -84,6 +84,8 @@ class UserController extends Controller
 
             Student::create([
                 'user_id' => $user->id,
+                'team_id' => 0,
+                'team_name' => '',
                 'name' => $request->input('name'),
                 'surname' => $request->input('surname')
             ]);

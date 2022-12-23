@@ -22,6 +22,7 @@
         <th>Imię</th>
         <th>Nazwisko</th>
       </tr>
+
         @foreach ($students as $key => $student)
         <tr>
             <td>{{ $student->name }}</td>

@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('team_id')->default(0);
             $table->string('name');
             $table->string('surname');
+            $table->string('team_name')->default(NULL);
             $table->foreign('user_id')
             ->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
