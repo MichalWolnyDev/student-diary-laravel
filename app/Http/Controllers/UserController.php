@@ -73,6 +73,7 @@ class UserController extends Controller
 
         } else {
             $isStudent = false;
+            $input['isStudent'] = $isStudent;
         }
 
         $user = User::create($input);
