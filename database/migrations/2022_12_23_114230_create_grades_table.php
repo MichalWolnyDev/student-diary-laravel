@@ -16,8 +16,12 @@ return new class extends Migration
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
             $table->string('subject');
+            $table->string('subject_name');
+            $table->unsignedBigInteger('student_id');
             $table->integer('grade');
             $table->text('description');
+            $table->foreign('student_id')
+            ->references('id')->on('students')->onDelete('cascade');
             $table->timestamps();
         });
     }

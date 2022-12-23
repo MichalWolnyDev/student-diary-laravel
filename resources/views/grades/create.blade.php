@@ -20,6 +20,7 @@
             </ul>
         </div>
     @endif
+    {{$id}}
     <form action="{{ route('grades.store') }}" method="POST">
         @csrf
          <div class="row">

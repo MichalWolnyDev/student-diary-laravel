@@ -20,8 +20,6 @@
             </ul>
         </div>
 @endif -->
-{{$teams}}
-{{$id}}
 <form action="{{ route('students.store', ['student_id' => $id]) }}" method="POST">
     @csrf
     <div class="row">

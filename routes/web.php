@@ -42,3 +42,5 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('teams', TeamController::class);
     Route::resource('students', StudentController::class);
 });
+
+// Route::get('students/grade', 'StudentController@grade')->name('students.grade');

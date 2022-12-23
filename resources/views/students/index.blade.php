@@ -8,7 +8,6 @@
        
     </div>
 </div>
-
 <table class="table table-bordered">
     <tr>
         <th>Nr</th>
@@ -18,7 +17,6 @@
         <th width="280px"></th>
     </tr>
 @foreach ($data as $key => $student)
-{{$student}}
     <tr>
         <td>{{ ++$i }}</td>
         <td>{{ $student->name }}</td>
@@ -31,11 +29,14 @@
         <td>
         @if($student->team_id == 0)
             <a class="btn btn-info" href="{{ route('students.edit', $student->id) }}">Przypisz do klasy</a>
-            @endif
-            <!-- <a class="btn btn-primary" href="{{ route('students.edit',$student->id) }}">Edycja</a>
+            @else
+             <a class="btn btn-primary" href="{{ route('students.create', ['id'=>$student->id]) }}">Dodaj ocenę</a>
+             <a class="btn btn-primary" href="{{ route('students.show',$student->id) }}">Pokaż oceny</a>
                 {!! Form::open(['method' => 'DELETE','route' => ['students.destroy', $student->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Usuń', ['class' => 'btn btn-danger']) !!}
-                {!! Form::close() !!} -->
+                {!! Form::close() !!}
+            @endif
+           
         </td>
     </tr>
 @endforeach

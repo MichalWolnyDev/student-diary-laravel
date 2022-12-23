@@ -19,7 +19,6 @@
     @endif
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
             <th>Przedmiot</th>
             <th>Ocena</th>
             <th>Opis</th>
@@ -27,13 +26,11 @@
         </tr>
         @foreach ($grades as $grade)
         <tr>
-            <td>{{ ++$i }}</td>
-            <td>{{ $grade->subject }}</td>
+            <td>{{ $grade->subject_name }}</td>
             <td>{{ $grade->grade }}</td>
             <td>{{ $grade->description }}</td>
             <td>
                 <form action="{{ route('grades.destroy',$grade->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('grades.show',$grade->id) }}">Pokaż</a>
                     @can('grade-edit')
                     <a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}">Edytuj</a>
                     @endcan
@@ -47,5 +44,4 @@
         </tr>
         @endforeach
     </table>
-    {!! $grades->links() !!}
 @endsection

@@ -60,7 +60,9 @@
                             @can('grade-create')
                             <li><a class="nav-link" href="{{ route('students.index') }}">Uczniowie</a></li>
                             @endcan
+                            @if(Auth::user()->isStudent == 1)
                             <li><a class="nav-link" href="{{ route('grades.index') }}">Oceny</a></li>
+                            @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

@@ -15,7 +15,7 @@ class Grades extends Model
      * @var array
      */
     protected $fillable = [
-        'subject', 'grade', 'description'
+        'subject', 'grade', 'description', 'student_id', 'subject_name'
     ];
 
 }

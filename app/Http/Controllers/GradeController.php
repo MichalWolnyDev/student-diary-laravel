@@ -1,9 +1,13 @@
 <?php
     
 namespace App\Http\Controllers;
-    
+
 use App\Models\Grades;
+use App\Models\Student;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use DB;
     
 class GradeController extends Controller
 { 
@@ -26,9 +30,26 @@ class GradeController extends Controller
      */
     public function index()
     {
-        $grades = Grades::latest()->paginate(10);
-        return view('grades.index',compact('grades'))
-            ->with('i', (request()->input('page', 1) - 1) * 10);
+        $user = Auth::id();
+        $student = Student::all();
+
+        $studentCheck = DB::table('students')
+            ->select('students.*')
+            ->where('user_id', $user)
+            ->get();
+
+        foreach ($studentCheck as $temp) {
+            $currentStudent = $temp->id;
+        }
+
+        $grades = DB::table('grades')
+            ->select('grades.*')
+            ->where('student_id', $currentStudent)
+            ->get();
+
+
+        // $grades = Grades::latest()->paginate(10);
+        return view('grades.index',compact('grades', 'student', 'user'));
     }
     
     /**
@@ -49,16 +70,38 @@ class GradeController extends Controller
      */
     public function store(Request $request)
     {
+
         request()->validate([
             'subject' => 'required',
             'grade' => 'required',
             'description' => 'required',
         ]);
+
+        $subject_name = DB::table('subjects')
+            ->select('subjects.subject')
+            ->where('subjects.id', $request->subject)
+            ->get();
     
-        Grades::create($request->all());
+        echo "<pre>";
+        var_dump($request->all());
+        echo "</pre>";
+
+
+        foreach ($subject_name as $name) {
+            $sname = $name->subject;
+        }
+
+
+        Grades::create([
+            'subject' => $request->subject,
+            'subject_name' => $sname,
+            'description' => $request->description,
+            'grade' => $request->grade,
+            'student_id' => $request->student_id
+        ]);
     
-        return redirect()->route('grades.index')
-                        ->with('success','Grade created successfully.');
+        return redirect()->route('students.index')
+                        ->with('success','Ocena dodana.');
     }
     
     /**
@@ -113,8 +156,7 @@ class GradeController extends Controller
     public function destroy(Grades $grade)
     {
         $grade->delete();
-    
-        return redirect()->route('grades.index')
-                        ->with('success','Grade deleted successfully');
+        return back();
+     
     }
 }
