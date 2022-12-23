@@ -29,7 +29,9 @@
         <td>Nie przypisano do żadnej klasy</td>
         @endif
         <td>
+        @if($student->team_id == 0)
             <a class="btn btn-info" href="{{ route('students.edit', $student->id) }}">Przypisz do klasy</a>
+            @endif
             <!-- <a class="btn btn-primary" href="{{ route('students.edit',$student->id) }}">Edycja</a>
                 {!! Form::open(['method' => 'DELETE','route' => ['students.destroy', $student->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Usuń', ['class' => 'btn btn-danger']) !!}
