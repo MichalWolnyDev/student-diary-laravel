@@ -64,9 +64,6 @@ class SubjectController extends Controller
      */
     public function show(Subject $subject)
     {
-        echo "<pre>";
-        var_dump($subject);
-        echo "</pre>";
         return view('subjects.show',compact('subject'));
     }
 

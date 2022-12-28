@@ -63,8 +63,12 @@ class UserController extends Controller
             'isStudent' => 'nullable'
         ]);
 
+      
+
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
+        $input['confirm-password'] = Hash::make($input['confirm-password']);
+
 
         if (isset($request->isStudent)) {
             $isStudent = true;

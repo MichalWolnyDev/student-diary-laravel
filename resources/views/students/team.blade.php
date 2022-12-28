@@ -26,14 +26,14 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Klasa:</strong>
-      <select class="form-select" aria-label="Team" name="team">
+                    <select class="form-select" aria-label="Team" name="team">
                     <option value="" selected>Wybierz klasę:</option>
 
-              @foreach ($teams as $team)
-        <option value="{{ $team->id }}">
-            {{ $team->teamname }}
-        </option>
-        @endforeach
+                    @foreach ($teams as $team)
+                <option value="{{ $team->id }}">
+                    {{ $team->teamname }}
+                </option>
+                @endforeach
 
     </select>
 </div>

@@ -65,9 +65,7 @@ class StudentController extends Controller
     {
 
         $input = $request->all();
-        // echo "<pre>";
-        // var_dump($input);
-        // echo "</pre>";
+      
 
         Team_has_student::create([
             'team_id' => $request->input('team'),
