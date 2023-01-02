@@ -73,13 +73,9 @@ class TeamController extends Controller
 
         $students = DB::table('students')
             ->join('team_has_students', 'team_has_students.student_id', '=', 'students.id')
-            ->select('students.*')
-            ->where('team_id', $team->id)
+            ->select('*')
+            ->where('students.team_id', $team->id)
             ->get();
-
-        //      echo "<pre>";
-        // var_dump($students);
-        // echo "</pre>";
 
 
         return view('teams.show')->with(compact('students'))->with(compact('team'));
