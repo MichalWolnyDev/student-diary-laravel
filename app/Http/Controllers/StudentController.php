@@ -26,9 +26,9 @@ class StudentController extends Controller
     public function create(Request $request)
     {
         $input = $request->all();
-          echo "<pre>";
-        var_dump($input);
-        echo "</pre>";
+        //   echo "<pre>";
+        // var_dump($input);
+        // echo "</pre>";
         $student_id = $input['id'];
 
         $subjects = Subject::all();
