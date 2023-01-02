@@ -15,7 +15,6 @@
             <div class="form-group">
                 <strong>Przedmiot:</strong>
                 {{ $subject->subject }}
-                {{$subject}}
             </div>
         </div>
        
