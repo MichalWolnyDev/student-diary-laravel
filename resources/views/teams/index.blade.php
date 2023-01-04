@@ -29,11 +29,11 @@
             <td>{{ $team->teamname }}</td>
             <td>
                 <form action="{{ route('teams.destroy',$team->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('teams.show',$team->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('teams.show',$team->id) }}">Pokaż</a>
                     @csrf
                     @method('DELETE')
                     @can('schoolclass-delete')
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">Usuń</button>
                     @endcan
                 </form>
             </td>

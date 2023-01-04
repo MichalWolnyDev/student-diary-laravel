@@ -22,13 +22,16 @@
             <th>Przedmiot</th>
             <th>Ocena</th>
             <th>Opis</th>
+            @can('grade-edit')
             <th width="280px">Akcja</th>
+            @endcan
         </tr>
         @foreach ($grades as $grade)
         <tr>
             <td>{{ $grade->subject_name }}</td>
             <td>{{ $grade->grade }}</td>
             <td>{{ $grade->description }}</td>
+            @can('grade-edit')
             <td>
                 <form action="{{ route('grades.destroy',$grade->id) }}" method="POST">
                     @can('grade-edit')
@@ -41,6 +44,7 @@
                     @endcan
                 </form>
             </td>
+            @endcan
         </tr>
         @endforeach
     </table>
