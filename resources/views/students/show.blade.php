@@ -29,6 +29,7 @@
             <td>{{ $grade->grade }}</td>
             <td>{{ $grade->description }}</td>
             <td>
+            <a class="btn btn-primary" href="{{ route('grades.edit',$grade->id) }}">Edycja</a>
             {!! Form::open(['method' => 'DELETE','route' => ['grades.destroy', $grade->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Usuń', ['class' => 'btn btn-danger']) !!}
                 {!! Form::close() !!}

@@ -136,15 +136,14 @@ class GradeController extends Controller
     public function update(Request $request, Grades $grade)
     {
          request()->validate([
-            'subject' => 'required',
+            // 'subject' => 'required',
             'grade' => 'required',
             'description' => 'required',
         ]);
     
         $grade->update($request->all());
-    
-        return redirect()->route('grades.index')
-                        ->with('success','Grade updated successfully');
+
+        return redirect()->back()->with('message', 'Ocena zmodyfikowana.');
     }
     
     /**

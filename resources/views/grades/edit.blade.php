@@ -6,7 +6,7 @@
             <h2>Edytuj ocenę</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('grades.index') }}"> Powrót</a>
+            <a class="btn btn-primary" href="{{ route('students.index') }}"> Powrót</a>
         </div>
     </div>
 </div>
@@ -20,11 +20,12 @@
     </ul>
 </div>
 @endif
+@if(session()->has('message')) <p class="alert alert-success">{{session('message')}}</p> @endif
 <form action="{{ route('grades.update',$grade->id) }}" method="POST">
     @csrf
     @method('PUT')
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <!-- <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
 
                 <strong>Ocena:</strong>
@@ -34,12 +35,12 @@
                     <option value="Majma">Majma</option>
                 </select>
             </div>
-        </div>
+        </div> -->
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Ocena:</strong>
                 <select class="form-select" aria-label="Grade" name="grade">
-                    <option value="{{ $grade->grade }}" selected>{{ $grade->grade }}</option>
+                    <option value="{{ $grade->grade }}" selected disabled>{{ $grade->grade }}</option>
                     <option value="6">6</option>
                     <option value="5">5</option>
                     <option value="4">4</option>
